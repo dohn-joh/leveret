@@ -1,0 +1,85 @@
+points.zones.matrix:
+pcbs.pcb.footprints:
+
+  - what: alps
+    params:
+      from: from
+      to: to
+
+  - what: jstph
+    params:
+      pos: pos
+      neg: neg 
+    adjust.shift: [50, 0]
+
+  - what: jumper
+    params:
+      from: from
+      to: to
+    adjust.shift: [100, 0]
+
+  - what: oled
+    params:
+      SDA: SDA
+      SCL: SCL 
+    adjust.shift: [0, 50]
+
+  - what: omron
+    params:
+      from: from
+      to: to
+    adjust.shift: [50, 50]
+
+  - what: rgb
+    params:
+      din: din
+      dout: dout
+    adjust.shift: [100, 50]
+
+  - what: rotary
+    params:
+      from: from
+      to: to
+      A: A
+      B: B
+      C: C
+    adjust.shift: [0, 100]
+
+  - what: scrollwheel
+    params:
+      from: from
+      to: to
+      A: A
+      B: B
+      C: C
+      D: D
+    adjust.shift: [50, 100]
+
+  - what: slider
+    params:
+      from: from
+      to: to
+    adjust.shift: [100, 100]
+
+  - what: via
+    params:
+      net: net
+    adjust.shift: [0, 150]
+
+  - what: scrollwheel
+    params:
+      from: from
+      to: to
+      A: A
+      B: B
+      C: C
+      D: D
+      reverse: true
+    adjust.shift: [50, 150]
+
+  - what: slider
+    params:
+      from: from
+      to: to
+      side: B
+    adjust.shift: [100, 150]

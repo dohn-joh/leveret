@@ -1,0 +1,41 @@
+points.zones.matrix:
+pcbs.pcb.footprints:
+
+  - what: pad
+    params:
+      net: net
+
+  - what: pad
+    params:
+      net: net
+      align: right
+      text: text
+    adjust.shift: [50, 0]
+
+  - what: pad
+    params:
+      net: net
+      align: up
+      front: false
+    adjust.shift: [0, 50]
+
+  - what: pad
+    params:
+      net: net
+      align: down
+      mirrored: true
+    adjust.shift: [50, 50]
+
+  - what: pad
+    params:
+      net: net
+      align: right
+      mirrored: true
+    adjust.shift: [100, 0]
+
+  - what: pad
+    params:
+      net: net
+      align: left
+      mirrored: true
+    adjust.shift: [100, 50]

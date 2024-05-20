@@ -1,0 +1,23 @@
+points:
+  zones:
+    matrix:
+      columns:
+        left:
+        middle.rows.home.adjust:
+          shift: [-2u, 0]
+          rotate: 45
+        right:
+          key:
+            stagger: 5
+            spread: 25
+            splay: -5
+            origin: [-9, -9]
+          rows:
+            home:
+              orient: -90
+              shift: [0, 10]
+              rotate: 90
+      rows:
+        bottom:
+        home:
+        top:

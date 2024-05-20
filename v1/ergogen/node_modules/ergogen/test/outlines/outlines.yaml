@@ -1,0 +1,37 @@
+points:
+  key:
+    padding: cy
+    bind: 0.1
+  zones:
+    matrix:
+      columns:
+        one:
+        two:
+      rows:
+        bottom:
+        top:
+outlines:
+  base:
+    - what: rectangle
+      where: true
+      size: cy
+      bound: true
+  adjust:
+    - what: circle
+      where: true
+      radius: 2
+      # adjust works, and it can use shape-specific units
+      adjust.shift: [0, r]
+  fillet:
+    - name: base
+      fillet: 2
+  scale:
+    - name: fillet
+      scale: 0.5
+  combination:
+    - "base"
+    - "-scale"
+    - "~fillet"
+  expand:
+    - name: combination
+      expand: 1

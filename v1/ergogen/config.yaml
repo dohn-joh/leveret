@@ -1,0 +1,431 @@
+units:
+  # choc spacing
+  # cx = 18
+  # cy = 17
+  # choc spacing with padding
+  px: cx + 2
+  py: cy + 2
+  # keycap size
+  kcx: 17.5
+  kcy: 16.5
+  # keycap size with padding
+  kdx: kcx + 0.5
+  kdy: kcy + 0.5
+  # horizontal padding for hotswap pads  
+  add_x: 0.7
+  # switch hole
+  switch_xy: 13.8
+  # mcu dimensions
+  mcux: 18
+  mcuy: 33
+  # mcu coordinates
+  mcsx: 1.065px
+  mcsy: -0.5kcy-2
+  # reset switch dimensions
+  rsx: 3.5
+  rsy: 6.1
+  rsh: 1.3 # hole diameter
+  rsd: 6.5 # distance between holes
+  # screw hole diameter (M2)
+  # screw head diameter ~3.3
+  # M2 nut height ~1.5
+  scd: 2.2
+
+points:
+  zones:
+    matrix:
+      key:
+        width: kcx
+        height: kcy
+        padding: cy
+        spread: cx
+      anchor:
+        # Fix placement on KiCAD sheet.
+        shift: [100, -100]
+        rotate: 10
+      columns:
+        pinky:
+          key:
+            column_net: C1
+        ring:
+          key:
+            column_net: C2
+            stagger: 10 # was 4
+            splay: -5
+            origin: [0, -3]
+        middle:
+          key:
+            column_net: C3
+            stagger: 2
+            splay: -5
+        index:
+          key:
+            column_net: C4
+            stagger: -2
+        inner:
+          key:
+            column_net: C5
+            stagger: -2
+      rows:
+        bottom:
+          row_net: R3
+        home:
+          row_net: R2
+        top:
+          row_net: R1
+        # num:
+        #   row_net: R0
+    thumb:
+      key:
+        width: kcx
+        height: kcy
+        padding: cy
+        spread: cx + 2.5
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [-11.75, -17] # was [-12, 20]
+      columns:
+        flexion:
+          key:
+            column_net: C5
+            splay: -15
+          rows:
+            upper:
+              skip: true
+        base:
+          key:
+            column_net: C6
+          rows:
+            upper:
+              shift: [5, 5]
+        extension:
+          key:
+            column_net: C7
+          rows:
+            upper:
+              skip: true
+      rows:
+        lower:
+          row_net: R4
+        upper:
+          row_net: R3
+    screw_top_left:
+      anchor:
+        ref: matrix_ring_top
+        shift: [-0.57kdx, -0.43kdy]
+      key.tags: screw_hole
+    screw_bottom_left:
+      anchor:
+        ref: matrix_pinky_bottom
+        shift: [0.65kdx, -5.75]
+      key.tags: screw_hole
+    screw_top_right:
+      anchor:
+        ref.aggregate.parts: [matrix_index_top, matrix_index_home, matrix_inner_top, matrix_inner_home]
+        shift: [0, 0.2]
+      key.tags: screw_hole
+    screw_bottom_right:
+      anchor:
+        ref.aggregate.parts: [matrix_index_home, matrix_index_bottom, matrix_inner_home, matrix_inner_bottom]
+      key.tags: screw_hole
+    screw_th_cluster:
+      anchor:
+        ref: thumb_base_lower
+        shift: [0, 0.65kdy]
+      key.tags: screw_hole
+outlines:
+  # !!!add fillets at the very end!!! or you will get malformed outline (self-intersecting) errors in kicad
+  _pinky:
+    - what: rectangle
+      where: /matrix_pinky/
+      size: [kdx+add_x, kdy]
+      adjust.shift: [-0.5add_x, 0]
+    - what: rectangle
+      where: [matrix_pinky_top, matrix_pinky_home]
+      size: [kdx, kdy]
+      adjust.shift: [5, 0]
+    - what: rectangle
+      where: matrix_pinky_bottom
+      size: [kdx+add_x, kdy]
+      adjust.shift: [0.5add_x, 0]
+  _ring:
+    - what: rectangle
+      where: /matrix_ring/
+      size: [kdx, kdy]
+    - what: rectangle
+      where: [matrix_ring_top, matrix_ring_home]
+      size: [kdx, kdy]
+      adjust.shift: [5, 0]
+  _middle:
+    - what: rectangle
+      where: /matrix_middle/
+      size: [kdx, kdy]
+    - what: rectangle
+      where: [matrix_middle_bottom]
+      size: [kdx, kdy]
+      adjust.shift: [-5, 0]
+  _index:
+    - what: rectangle
+      where: /matrix_index/
+      size: [kdx, kdy]
+  _inner:
+    - what: rectangle
+      where: /matrix_inner/
+      size: [kdx + add_x, kdy]
+      adjust.shift: [0.5add_x, 0]
+  _thumb:
+    - what: rectangle
+      where: /thumb/
+      size: [kdx, kdy]
+    - what: rectangle
+      where: thumb_base_upper
+      size: [kdx, kdy]
+      adjust.shift: [-5, 0]
+    - what: rectangle
+      where: [thumb_base_upper, thumb_extension_lower]
+      size: [kdx + add_x, kdy]
+      adjust.shift: [0.5add_x, 0]
+    - what: rectangle
+      where: thumb_flexion_lower
+      size: [kdx + add_x, kdy]
+      adjust.shift: [-0.5add_x, 0]
+  matrix_thumb:
+    - name: _pinky
+    - name: _ring
+    - name: _middle
+    - name: _index
+    - name: _inner
+    - name: _thumb
+  plate_helper_shape: # for generating minimalist test prints
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_inner_bottom
+          shift: [0.5kdx, 0.5kdy]
+        - ref: thumb_base_upper
+          shift: [-0.5kdx, 0.5kdy]
+        - ref: thumb_base_upper
+          shift: [0.5kdx + add_x, 0.5kdy]
+        - ref: thumb_base_upper
+          shift: [0.5kdx + add_x, -0.5kdy]
+        - ref: thumb_extension_lower
+          shift: [0.5kdx + add_x, 0.5kdy]
+        - ref: thumb_extension_lower
+          shift: [0.5kdx + add_x, -0.5kdy]
+        - ref: thumb_flexion_lower
+          shift: [-0.5kdx, -0.5kdy]
+        - ref: thumb_flexion_lower
+          shift: [-0.5kdx, 0.5kdy]
+  keycaps:
+    - what: rectangle
+      where:
+        - /matrix/
+        - /thumb/
+      size: [kcx, kcy]
+  plate_shape:
+    - name: matrix_thumb
+    - name: plate_helper_shape
+      fillet: 0.5
+  preview:
+    - name: plate_shape
+    - name: keycaps
+      operation: subtract
+  switch_cutouts:
+    - what: rectangle
+      where:
+        - /matrix/
+        - /thumb/
+      size: switch_xy
+  test_print:
+    - name: plate_shape
+    - name: switch_cutouts
+      operation: subtract
+pcbs:
+  leveret:
+    ### commented out outline for edge cuts. using a footprint instead to get desired board shape.
+    # outlines:
+    #   main:
+    #     outline: plate_shape
+    footprints:
+      edge_cuts:
+        what: leveret_edge_cuts
+        where: matrix_middle_bottom
+      mcu:
+        what: nice_nano_v2_expanded
+        where: matrix_inner_top
+        adjust:
+          shift: [-8.7, -2.55]
+        params:
+          ### pin assignments (controller on top, components facing down)
+          P9: R4
+          P10: R3
+          P11: R2
+          P12: R1
+
+          P20: C7
+          P19: C6
+          P18: C5
+          P17: C4
+          P16: C3
+          P15: C2
+          P14: C1
+      choc_hotswap:
+        what: infused-kim/choc
+          # changed hotswap_front/back B.SilkS/F.SilkS to Dwgs.User to hide outlines
+        where: [/matrix_ring/, /matrix_middle/, /matrix_index/, matrix_inner_bottom, thumb_base_lower]
+        adjust.rotate: 180
+        params:
+          show_keycaps: true # shows the outline of the keycap width x depth bounding box
+          keycaps_x: kcx
+          keycaps_y: kcy
+          reverse: true # determines if the footprint appears on the top and bottom of the pcb.
+          hotswap: true # use the hotswap footprint instead of through-hole
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      hotswap_left: # decrease width of hotswap pads to ensure 0.2mm clearance to edge
+        what: infused-kim/choc
+        where: 
+          - [/matrix_pinky/, -matrix_pinky_bottom]
+          - thumb_flexion_lower
+        adjust.rotate: 180
+        params:
+          show_keycaps: true # shows the outline of the keycap width x depth bounding box
+          keycaps_x: kcx
+          keycaps_y: kcy
+          reverse: true # determines if the footprint appears on the top and bottom of the pcb.
+          hotswap: true # use the hotswap footprint instead of through-hole
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+          outer_pad_width_back: 2.4
+      hotswap_right: # decrease width of hotswap pads to ensure 0.2mm clearance to edge
+        what: infused-kim/choc
+        where: [matrix_inner_top, matrix_inner_home, thumb_base_upper, thumb_extension_lower]
+        adjust.rotate: 180
+        params:
+          show_keycaps: true # shows the outline of the keycap width x depth bounding box
+          keycaps_x: kcx
+          keycaps_y: kcy
+          reverse: true # determines if the footprint appears on the top and bottom of the pcb.
+          hotswap: true # use the hotswap footprint instead of through-hole
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+          outer_pad_width_front: 2.4
+      hotswap_pinky_bottom:
+        what: infused-kim/choc
+        where: matrix_pinky_bottom
+        adjust.rotate: 180
+        params:
+          show_keycaps: true # shows the outline of the keycap width x depth bounding box
+          keycaps_x: kcx
+          keycaps_y: kcy
+          reverse: true # determines if the footprint appears on the top and bottom of the pcb.
+          hotswap: true # use the hotswap footprint instead of through-hole
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+          outer_pad_width_back: 2.4
+          outer_pad_width_front: 2.4
+      diodes_back:
+        what: combo_diode # ceoloide's footprint based on infused-kim's
+        where:
+          - /matrix/
+          - /thumb/
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+          side: B
+          include_tht: false
+        adjust:
+          shift: [-7.625, 0.5]
+          rotate: -90 # makes diode arrow point up
+      diodes_front:
+        what: combo_diode # ceoloide's footprint based on infused-kim's
+        where:
+          - [/matrix/, -matrix_index_top]
+          - /thumb/
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+          side: F
+          include_tht: false
+        adjust:
+          shift: [7.625, 0.5]
+          rotate: -90
+      diodes_index_top_front:
+        what: combo_diode # ceoloide's footprint based on infused-kim's
+        where: matrix_index_top
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+          side: F
+          include_tht: false
+        adjust:
+          shift: [10.64, -2]
+          rotate: -90
+      power:
+        what: infused-kim/switch_power
+        where: thumb_base_upper
+        adjust:
+          shift: [-6, 6.5] # y=6.5 puts it at top of key
+          rotate: 90
+        params: 
+          reverse: true
+          from: BAT_P
+          to: RAW
+      reset:
+        what: reset_button
+        where: thumb_base_upper
+        adjust:
+          rotate: 90 # -90 = bottom facing
+          shift: [3, 6.85] # shift is applied after rotation
+        params:
+          reverse: true
+          from: RST
+          to: GND
+          include_bosses: true
+          silkscreen: false
+      batt_pads:
+        what: infused-kim/pads
+        where: matrix_inner_bottom
+        adjust:
+          shift: [0, 5]
+          rotate: -90
+        params:
+          reverse: true
+          space: 1.25
+          net_1: BAT_P
+          net_2: GND
+      conn_battery:
+        what: infused-kim/conn_molex_pico_ezmate_1x02
+        where: matrix_inner_bottom
+        adjust: 
+          shift: [0, 5]
+          rotate: -90
+        params:
+          reverse: true
+          pad_1: BAT_P
+          pad_2: GND
+      conn_battery_icon:
+        what: infused-kim/icon_bat
+        params:
+          reverse: true
+          spacing: 1.5
+        where: matrix_inner_bottom
+        adjust:
+          shift: [3.5, 5]
+          rotate: -90
+      m2_screws:
+        what: infused-kim/mounting_hole
+        # changed courtyard_offset in mounting_hole.js to 0.47
+        # increases outline to m2 screwhead size (diameter ~3.4mm)
+        where: screw_hole
+        params:
+          drill: scd
+          outline: 0.13
+      jlcpcb_order_number_text:
+        what: infused-kim/text
+        where: matrix_inner_top
+        params:
+          text: JLCJLCJLCJLC
+          reverse: false
+        adjust:
+          shift: [-0.7, 0.15kdy]

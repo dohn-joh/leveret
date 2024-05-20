@@ -1,0 +1,177 @@
+2024-01-04 20:05:04.910 [main] INFO  Freerouting v1.9.0 (build-date: 2024-01-03)
+2024-01-04 20:05:04.948 [main] INFO  Settings were loaded from freerouting.json
+2024-01-04 20:05:05.963 [main] INFO  Opening 'leveret.dsn'...
+2024-01-04 20:05:06.352 [ForkJoinPool.commonPool-worker-1] INFO  New version available: v1.9.0
+2024-01-04 20:05:06.555 [main] INFO  Opening 'leveret.rules'...
+2024-01-04 20:05:06.560 [main] WARN  Structure.read_scope: unexpected end of file at 'Via[0-1]_600:300_um'
+2024-01-04 20:05:11.096 [Thread-27] INFO  Starting auto-routing...
+2024-01-04 20:05:33.449 [main] INFO  Freerouting v1.9.0 (build-date: 2024-01-03)
+2024-01-04 20:05:33.486 [main] INFO  Settings were loaded from freerouting.json
+2024-01-04 20:05:34.501 [main] INFO  Opening 'leveret.dsn'...
+2024-01-04 20:05:34.897 [ForkJoinPool.commonPool-worker-1] INFO  New version available: v1.9.0
+2024-01-04 20:05:35.200 [main] INFO  Opening 'leveret.rules'...
+2024-01-04 20:05:35.207 [main] WARN  Structure.read_scope: unexpected end of file at 'Via[0-1]_600:300_um'
+2024-01-04 20:05:38.019 [Thread-27] INFO  Starting auto-routing...
+2024-01-04 20:05:40.830 [AWT-EventQueue-0] ERROR Cannot invoke "app.freerouting.geometry.planar.FloatPoint.rotate(double, app.freerouting.geometry.planar.FloatPoint)" because "p_point" is null
+java.lang.NullPointerException: Cannot invoke "app.freerouting.geometry.planar.FloatPoint.rotate(double, app.freerouting.geometry.planar.FloatPoint)" because "p_point" is null
+	at app.freerouting.boardgraphics.CoordinateTransform.board_to_screen(CoordinateTransform.java:82) ~[freerouting-executable.jar:unspecified]
+	at app.freerouting.interactive.InteractiveState.mouse_wheel_moved(InteractiveState.java:90) ~[freerouting-executable.jar:unspecified]
+	at app.freerouting.interactive.BoardHandling.mouse_wheel_moved(BoardHandling.java:721) ~[freerouting-executable.jar:unspecified]
+	at app.freerouting.gui.BoardPanel.lambda$default_init$0(BoardPanel.java:123) ~[freerouting-executable.jar:unspecified]
+	at java.awt.Component.processMouseWheelEvent(Component.java:6714) ~[?:?]
+	at java.awt.Component.processEvent(Component.java:6398) ~[?:?]
+	at java.awt.Container.processEvent(Container.java:2266) ~[?:?]
+	at java.awt.Component.dispatchEventImpl(Component.java:5001) ~[?:?]
+	at java.awt.Container.dispatchEventImpl(Container.java:2324) ~[?:?]
+	at java.awt.Component.dispatchEvent(Component.java:4833) ~[?:?]
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4948) ~[?:?]
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4604) ~[?:?]
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4516) ~[?:?]
+	at java.awt.Container.dispatchEventImpl(Container.java:2310) ~[?:?]
+	at java.awt.Window.dispatchEventImpl(Window.java:2780) ~[?:?]
+	at java.awt.Component.dispatchEvent(Component.java:4833) ~[?:?]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:775) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86) ~[?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:97) ~[?:?]
+	at java.awt.EventQueue$5.run(EventQueue.java:747) ~[?:?]
+	at java.awt.EventQueue$5.run(EventQueue.java:745) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86) ~[?:?]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:744) ~[?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2024-01-04 20:09:39.786 [Thread-27] INFO  Auto-routing was completed in 4 minute(s) 1.76 seconds.
+2024-01-04 20:09:39.887 [Thread-27] INFO  Starting route optimization on 1 thread...
+2024-01-04 20:09:44.754 [Thread-27] INFO  Route optimization was completed in 4.87 seconds.
+2024-01-04 20:09:44.762 [Thread-27] INFO  Saving 'test.ses'...
+2024-01-07 23:55:47.947 [main] INFO  Freerouting v1.9.0 (build-date: 2024-01-03)
+2024-01-07 23:55:49.033 [main] INFO  Opening 'leveret.dsn'...
+2024-01-07 23:55:49.480 [ForkJoinPool.commonPool-worker-1] INFO  New version available: v1.9.0
+2024-01-07 23:55:49.876 [main] INFO  Opening 'leveret.rules'...
+2024-01-07 23:55:49.881 [main] WARN  Structure.read_scope: unexpected end of file at 'Via[0-1]_600:300_um'
+2024-01-07 23:55:53.946 [Thread-27] INFO  Starting auto-routing...
+2024-01-07 23:56:12.681 [AWT-EventQueue-0] ERROR Cannot invoke "app.freerouting.geometry.planar.FloatPoint.rotate(double, app.freerouting.geometry.planar.FloatPoint)" because "p_point" is null
+java.lang.NullPointerException: Cannot invoke "app.freerouting.geometry.planar.FloatPoint.rotate(double, app.freerouting.geometry.planar.FloatPoint)" because "p_point" is null
+	at app.freerouting.boardgraphics.CoordinateTransform.board_to_screen(CoordinateTransform.java:82) ~[freerouting-executable.jar:unspecified]
+	at app.freerouting.interactive.InteractiveState.mouse_wheel_moved(InteractiveState.java:90) ~[freerouting-executable.jar:unspecified]
+	at app.freerouting.interactive.BoardHandling.mouse_wheel_moved(BoardHandling.java:721) ~[freerouting-executable.jar:unspecified]
+	at app.freerouting.gui.BoardPanel.lambda$default_init$0(BoardPanel.java:123) ~[freerouting-executable.jar:unspecified]
+	at java.awt.Component.processMouseWheelEvent(Component.java:6714) ~[?:?]
+	at java.awt.Component.processEvent(Component.java:6398) ~[?:?]
+	at java.awt.Container.processEvent(Container.java:2266) ~[?:?]
+	at java.awt.Component.dispatchEventImpl(Component.java:5001) ~[?:?]
+	at java.awt.Container.dispatchEventImpl(Container.java:2324) ~[?:?]
+	at java.awt.Component.dispatchEvent(Component.java:4833) ~[?:?]
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4948) ~[?:?]
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4604) ~[?:?]
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4516) ~[?:?]
+	at java.awt.Container.dispatchEventImpl(Container.java:2310) ~[?:?]
+	at java.awt.Window.dispatchEventImpl(Window.java:2780) ~[?:?]
+	at java.awt.Component.dispatchEvent(Component.java:4833) ~[?:?]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:775) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86) ~[?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:97) ~[?:?]
+	at java.awt.EventQueue$5.run(EventQueue.java:747) ~[?:?]
+	at java.awt.EventQueue$5.run(EventQueue.java:745) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86) ~[?:?]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:744) ~[?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2024-01-07 23:56:26.147 [Thread-27] ERROR AutorouteEngine.autoroute_connection: Exception in maze_search_algo.find_connection
+java.lang.NullPointerException: Cannot read the array length because "drill_shapes" is null
+	at app.freerouting.autoroute.DrillPage.get_drills(DrillPage.java:108) ~[freerouting-executable.jar:unspecified]
+	at app.freerouting.autoroute.MazeSearchAlgo.expand_to_drills_of_page(MazeSearchAlgo.java:782) ~[freerouting-executable.jar:unspecified]
+	at app.freerouting.autoroute.MazeSearchAlgo.occupy_next_element(MazeSearchAlgo.java:239) ~[freerouting-executable.jar:unspecified]
+	at app.freerouting.autoroute.MazeSearchAlgo.find_connection(MazeSearchAlgo.java:197) ~[freerouting-executable.jar:unspecified]
+	at app.freerouting.autoroute.AutorouteEngine.autoroute_connection(AutorouteEngine.java:123) [freerouting-executable.jar:unspecified]
+	at app.freerouting.autoroute.BatchAutorouter.autoroute_item(BatchAutorouter.java:432) [freerouting-executable.jar:unspecified]
+	at app.freerouting.autoroute.BatchAutorouter.autoroute_pass(BatchAutorouter.java:306) [freerouting-executable.jar:unspecified]
+	at app.freerouting.autoroute.BatchAutorouter.autoroute_passes(BatchAutorouter.java:173) [freerouting-executable.jar:unspecified]
+	at app.freerouting.interactive.BatchAutorouterThread.thread_action(BatchAutorouterThread.java:90) [freerouting-executable.jar:unspecified]
+	at app.freerouting.interactive.InteractiveActionThread.run(InteractiveActionThread.java:56) [freerouting-executable.jar:unspecified]
+2024-01-07 23:56:26.194 [Thread-27] INFO  Auto-routing was completed in 32.25 seconds.
+2024-01-07 23:56:26.295 [Thread-27] INFO  Starting route optimization on 1 thread...
+2024-01-07 23:56:26.306 [Thread-27] INFO  Route optimization was completed in 0.01 seconds.
+2024-01-07 23:56:26.344 [Thread-27] INFO  Saving 'test.ses'...
+2024-01-07 23:57:02.317 [main] INFO  Freerouting v1.9.0 (build-date: 2024-01-03)
+2024-01-07 23:57:02.356 [main] INFO  Settings were loaded from freerouting.json
+2024-01-07 23:57:03.372 [main] INFO  Opening 'leveret.dsn'...
+2024-01-07 23:57:03.757 [ForkJoinPool.commonPool-worker-1] INFO  New version available: v1.9.0
+2024-01-07 23:57:03.998 [main] INFO  Opening 'leveret.rules'...
+2024-01-07 23:57:04.008 [main] WARN  Structure.read_scope: unexpected end of file at 'Via[0-1]_600:300_um'
+2024-01-07 23:57:07.736 [Thread-27] INFO  Starting auto-routing...
+2024-01-07 23:57:58.392 [Thread-27] INFO  Auto-routing was completed in 50.65 seconds.
+2024-01-07 23:57:58.492 [Thread-27] INFO  Starting route optimization on 1 thread...
+2024-01-07 23:57:58.498 [Thread-27] INFO  Route optimization was completed in 0.01 seconds.
+2024-01-07 23:57:58.509 [Thread-27] INFO  Saving 'test.ses'...
+2024-01-07 23:58:04.994 [main] INFO  Freerouting v1.9.0 (build-date: 2024-01-03)
+2024-01-07 23:58:05.031 [main] INFO  Settings were loaded from freerouting.json
+2024-01-07 23:58:06.046 [main] INFO  Opening 'leveret.dsn'...
+2024-01-07 23:58:06.428 [ForkJoinPool.commonPool-worker-1] INFO  New version available: v1.9.0
+2024-01-07 23:58:06.663 [main] INFO  Opening 'leveret.rules'...
+2024-01-07 23:58:06.673 [main] WARN  Structure.read_scope: unexpected end of file at 'Via[0-1]_600:300_um'
+2024-01-07 23:58:12.639 [Thread-27] INFO  Starting auto-routing...
+2024-01-07 23:58:50.000 [AWT-EventQueue-0] ERROR Cannot invoke "app.freerouting.geometry.planar.FloatPoint.rotate(double, app.freerouting.geometry.planar.FloatPoint)" because "p_point" is null
+java.lang.NullPointerException: Cannot invoke "app.freerouting.geometry.planar.FloatPoint.rotate(double, app.freerouting.geometry.planar.FloatPoint)" because "p_point" is null
+	at app.freerouting.boardgraphics.CoordinateTransform.board_to_screen(CoordinateTransform.java:82) ~[freerouting-executable.jar:unspecified]
+	at app.freerouting.interactive.InteractiveState.mouse_wheel_moved(InteractiveState.java:90) ~[freerouting-executable.jar:unspecified]
+	at app.freerouting.interactive.BoardHandling.mouse_wheel_moved(BoardHandling.java:721) ~[freerouting-executable.jar:unspecified]
+	at app.freerouting.gui.BoardPanel.lambda$default_init$0(BoardPanel.java:123) ~[freerouting-executable.jar:unspecified]
+	at java.awt.Component.processMouseWheelEvent(Component.java:6714) ~[?:?]
+	at java.awt.Component.processEvent(Component.java:6398) ~[?:?]
+	at java.awt.Container.processEvent(Container.java:2266) ~[?:?]
+	at java.awt.Component.dispatchEventImpl(Component.java:5001) ~[?:?]
+	at java.awt.Container.dispatchEventImpl(Container.java:2324) ~[?:?]
+	at java.awt.Component.dispatchEvent(Component.java:4833) ~[?:?]
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4948) ~[?:?]
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4604) ~[?:?]
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4516) ~[?:?]
+	at java.awt.Container.dispatchEventImpl(Container.java:2310) ~[?:?]
+	at java.awt.Window.dispatchEventImpl(Window.java:2780) ~[?:?]
+	at java.awt.Component.dispatchEvent(Component.java:4833) ~[?:?]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:775) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86) ~[?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:97) ~[?:?]
+	at java.awt.EventQueue$5.run(EventQueue.java:747) ~[?:?]
+	at java.awt.EventQueue$5.run(EventQueue.java:745) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86) ~[?:?]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:744) ~[?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+2024-01-08 00:02:14.703 [Thread-27] INFO  Auto-routing was completed in 4 minute(s) 2.06 seconds.
+2024-01-08 00:02:14.804 [Thread-27] INFO  Starting route optimization on 1 thread...
+2024-01-08 00:02:18.939 [Thread-27] INFO  Route optimization was completed in 4.13 seconds.
+2024-01-08 00:02:18.946 [Thread-27] INFO  Saving 'test.ses'...
+2024-01-08 11:02:37.924 [main] INFO  Freerouting v1.9.0 (build-date: 2024-01-03)
+2024-01-08 11:02:39.010 [main] INFO  Opening 'leveret.dsn'...
+2024-01-08 11:02:39.412 [ForkJoinPool.commonPool-worker-1] INFO  New version available: v1.9.0
+2024-01-08 11:02:39.809 [main] INFO  Opening 'leveret.rules'...
+2024-01-08 11:02:39.814 [main] WARN  Structure.read_scope: unexpected end of file at 'Via[0-1]_600:300_um'
+2024-01-08 11:02:41.695 [Thread-27] INFO  Starting auto-routing...
+2024-01-08 11:06:35.321 [Thread-27] INFO  Auto-routing was completed in 3 minute(s) 53.62 seconds.
+2024-01-08 11:06:35.422 [Thread-27] INFO  Starting route optimization on 1 thread...
+2024-01-08 11:06:39.442 [Thread-27] INFO  Route optimization was completed in 4.02 seconds.
+2024-01-08 11:06:39.450 [Thread-27] INFO  Saving 'test.ses'...

@@ -1,0 +1,51 @@
+points.zones.matrix:
+pcbs.pcb.footprints:
+  
+  # base
+  - what: mx
+    params:
+      from: from
+      to: to
+  
+  # keycap visualization
+  - what: mx
+    params:
+      from: from
+      to: to
+      keycaps: true
+    adjust.shift: [50, 0]
+
+  # reverse
+  - what: mx
+    params:
+      from: from
+      to: to
+      reverse: true
+    adjust.shift: [100, 0]
+
+  # hotswap
+  - what: mx
+    params:
+      from: from
+      to: to
+      hotswap: true
+    adjust.shift: [150, 0]
+
+  # both reverse and hotswap
+  - what: mx
+    params:
+      from: from
+      to: to
+      reverse: true
+      hotswap: true
+    adjust.shift: [200, 0]
+
+  # all of keycaps, reverse and hotswap
+  - what: mx
+    params:
+      from: from
+      to: to
+      keycaps: true
+      reverse: true
+      hotswap: true
+    adjust.shift: [250, 0]

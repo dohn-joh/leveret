@@ -1,0 +1,9 @@
+points.zones.matrix:
+  columns.col: {}
+outlines:
+  export:
+    - what: rectangle
+      where: true
+      size: 18
+pcbs:
+  export: {}

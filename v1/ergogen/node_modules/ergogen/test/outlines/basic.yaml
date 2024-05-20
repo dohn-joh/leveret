@@ -1,0 +1,23 @@
+points:
+  zones:
+    matrix:
+      columns:
+        left.key.bind: [,10,,]
+        right.key.bind: [,,,10]
+      rows:
+        bottom.key.bind: [10,,,]
+        top.key.bind: [,,10,]
+      key:
+        bind: [0, 0, 0, 0]
+outlines:
+  outline:
+    main:
+      what: rectangle
+      where: true
+      size: 20
+    min:
+      what: rectangle
+      where: true
+      bound: false
+      size: 14
+      operation: subtract

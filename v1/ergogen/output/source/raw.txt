@@ -1,0 +1,163 @@
+units:
+  # choc spacing with padding
+  px: cx + 2
+  py: cy + 2
+  # keycap size
+  kcx: 17.5
+  kcy: 16.5
+  # switch hole
+  switch_xy: 13.8
+
+points:
+  zones:
+    matrix:
+      key:
+        width: kcx
+        height: kcy
+        padding: cy
+        spread: cx
+      anchor:
+        rotate: 5
+      columns:
+        pinky2:
+        pinky:
+        ring:
+          key.origin: [-12, -19]
+          key.stagger: 4
+        middle:
+          key.stagger: 2
+        index:
+          key.stagger: -2
+        inner:
+          key.stagger: -2
+      rows:
+        bottom:
+        home:
+        top:
+        num:
+    thumb:
+      key:
+        width: kcx
+        height: kcy
+        padding: cy
+        spread: cx
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [-43, -19]
+      columns:
+        inner2:
+          rows:
+            top:
+              skip: true
+          key.splay: 10
+          key.origin: [0.5cx, 3]
+        inner:
+          rows:
+            top:
+              skip: true
+          key.splay: -10
+          key.origin: [-0.5cx, -0.47cy]
+        home:
+          rows:
+            top:
+              skip: true
+          key.splay: -10
+          key.origin: [-0.5cx, -0.47cy]
+        outer:
+          key.splay: -15
+          key.origin: [-1.1cx, -0.35cy]
+        outer2.key:
+          splay: -15
+          origin: [-1.2cx, -0.34cy]
+      rows:
+        bottom:
+        top:
+  rotate: -20
+  mirror:
+    ref: matrix_pinky_home
+    distance: 230
+outlines:
+  board:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_pinky2_num
+          shift: [-0.5px,0.5py]
+        - ref: matrix_pinky_num
+          shift: [0.4px,0.5py]
+        - ref: matrix_ring_num
+          shift: [-0.5px,0.5py]
+        - ref: matrix_ring_num
+          shift: [0.4px,0.5py]
+        - ref: matrix_middle_num
+          shift: [-0.5px,0.5py]
+        - ref: matrix_middle_num
+          shift: [0.5px,0.5py]
+        - ref: matrix_index_num
+          shift: [-0.399px,0.5py]
+        - ref: matrix_index_num
+          shift: [0.5px,0.5py]
+        - ref: matrix_inner_num
+          shift: [-0.4px,0.5py]
+        - ref: matrix_inner_num
+          shift: [0.5px,0.5py]
+        - ref: matrix_inner_bottom
+          shift: [0.5px,0.45py]
+        - ref: thumb_outer_top
+          shift: [-0.45px,0.5py]
+        - ref: thumb_outer_top
+          shift: [0.45px,0.5py]
+        - ref: thumb_outer2_top
+          shift: [-0.45px,0.5py]
+        - ref: thumb_outer2_top
+          shift: [0.5px,0.5py]
+        - ref: thumb_outer2_bottom
+          shift: [0.5px,-0.5py]
+        - ref: thumb_outer2_bottom
+          shift: [-0.45px,-0.5py]
+        - ref: thumb_outer_bottom
+          shift: [-0.5px,-0.5py]
+        - ref: thumb_home_bottom
+          shift: [-0.43px,-0.5py]
+        - ref: thumb_inner_bottom
+          shift: [0.44px,-0.5py]
+        - ref: thumb_inner_bottom
+          shift: [-0.44px,-0.5py]
+        - ref: thumb_inner2_bottom
+          shift: [-0.47px,-0.5py]
+        - ref: matrix_pinky_bottom
+          shift: [0.45px,-0.5py]
+        - ref: matrix_pinky2_bottom
+          shift: [-0.5px,-0.5py]
+      fillet: 1
+  keycaps:
+    - what: rectangle
+      where: true
+      size: [kcx, kcy]
+  switch_cutouts:
+    - what: rectangle
+      where: true
+      size: [switch_xy, switch_xy]
+  board_keycaps:
+    - name: board
+    - operation: subtract
+      name: keycaps
+  board_switch_cutouts:
+    - name: board
+    - operation: subtract
+      name: switch_cutouts
+pcbs:
+  frontplate:
+    outlines:
+      main:
+        outline: board
+    footprints:
+      choc_hotswap:
+        what: choc
+        where: true
+        params:
+          keycaps: true
+          reverse: false
+          hotswap: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"

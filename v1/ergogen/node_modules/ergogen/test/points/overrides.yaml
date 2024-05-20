@@ -1,0 +1,15 @@
+points.zones.matrix:
+  columns:
+    left:
+    middle:
+      rows:
+        top:
+    right:
+      key.stagger: u
+      rows:
+        bottom: $unset
+        home:
+        top:
+  rows:
+    bottom:
+    home:

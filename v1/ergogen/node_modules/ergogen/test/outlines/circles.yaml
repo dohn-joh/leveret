@@ -1,0 +1,25 @@
+points:
+  zones:
+    matrix: {}
+  mirror: 20
+outlines:
+  outline:
+    main:
+      what: rectangle
+      where: true
+      size: 20
+      bound: false
+    middle_circle:
+      what: circle
+      where:
+        aggregate.parts:
+          - matrix
+          - mirror_matrix
+      radius: 15
+    outside_circles:
+      what: circle
+      where:
+        ref: matrix
+        shift: [-10, 10]
+      radius: 5
+      asym: both
