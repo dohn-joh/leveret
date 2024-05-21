@@ -3,4 +3,4 @@ Use these files at your own risk. I don't plan to write a build guide or bill of
 
 # MORE WARNINGS
 - v1 is very challenging to build. I intentionally did not include the case files because this version is the earliest prototype with the most build complexity and flaws.
-- Both v1 and v2 use reversible pcbs, and both versions lack informative silkscreen labels. If you're 100% decided on building this, then you'll need to reference the nets in the kicad files before soldering the mcu.
+- Both v1 and v2 use reversible pcbs, and both versions lack informative silkscreen labels. If you're 100% decided on building this, then you'll need to reference the nets in the kicad files before soldering the mcu jumpers and socketing the mcu.
